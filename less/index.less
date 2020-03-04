@@ -1,74 +1,144 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// out: ../css/index.css, compress: true
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+//  http://meyerweb.com/eric/tools/css/reset/
+//  v2.0 | 20110126
+//  License: none (public domain)
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+// HTML5 display-role reset for older browsers
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style-type: square box;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
-
-/* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
-}
-
-html, body {
-    height: 100%;
-}
-
-
+@import url('https://fonts.googleapis.com/css?family=Acme|Kanit&display=swap');
 
 @margin: 30px;
-@footer-height: 75px;
-@primary: lightgrey;
-@secondary: red;
-@primary-text:black;
-
+@primary: #37474f;
+@secondary: #2e0404;
+@main-font: 'Kanit', sans-serif;
+@header-font:'Acme', sans-serif;
 
 .primaryColor() {
   background-color: @primary;
-  color: @primary-text;
+  
 }
 
 .center() {
@@ -88,96 +158,105 @@ html, body {
   ul {
     padding-left: 22px;
     line-height: 2rem;
-    list-style-type: square;
   }
-
-
-
+  ul li::before {
+    content:'|'; 
+    color: @secondary;
+    font-weight: bold; 
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em; 
+  }
+}
 
 * {
   box-sizing: border-box;
   max-width: 100%;
 }
 
-
-
+html,
 body {
   height: 100%;
+  line-height: 2rem;
+}
+
+body {
+  height:100%;
   margin: 30px;
+  font-family:@main-font;
 }
 
 h1 {
-  font-size: 10.5px;
+  font-size: 3rem;
   text-align: center;
   border-bottom: solid 1px @secondary;
   padding-bottom: 6px;
   margin-bottom: @margin / 2;
+  font-family:'Acme', sans-serif;
 }
 
 h2 {
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   border-bottom: solid 1px @secondary;
   padding-bottom: 6px;
   margin-bottom: @margin / 2;
+  color:@secondary;
 }
 
-.card {
-  background: whitesmoke;
+.space {
+  background: rgb(235, 229, 229);
   border-radius: 2px;
   padding: 2rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  
-  .card:hover {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  
-    header {
-      nav {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: @margin;
+  transition: all 0.3s cubic-bezier(0.20, 0.8, 0.40, 1);
+}
+
+.space:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.40), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+
+header {
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: @margin;
     
-        .logo {
-          background-color: @secondary;
-          width: 100px;
-          height: 64px;
-          mask: url(#mymask);
-          -webkit-mask-box-image: url('../assets/img/logo.png');
-        }
     
-        .links {
-          width: 40%;
-          .space();
-    
-          a {
-            text-decoration: none;
-            font-size: 1rem;
-            color: black;
-          }
-        }
-    
-        @media (max-width: 960px) {
-          flex-direction: column;
-          align-items: center;
-    
-         .links {
-            width: 100%;
-          }
-        }
+
+    .links {
+      width: 40%;
+      .space();
+
+      a {
+        text-decoration: none;
+        font-size: 1rem;
+        color: black;
       }
     }
-    
 
+    @media (max-width: 960px) {
+      flex-direction: column;
+      align-items: center;
+
+      
+
+      .links {
+        width: 100%;
+      }
+    }
+  }
+}
 
 .content {
-  margin-bottom: @footer-height + @margin;
+  margin-bottom: 100px + @margin;
   display: grid;
   grid-gap: 30px;
   grid-template:
     'intro intro intro'
-    'skills skills history'
-    'skills skills history'
-    'skills skills contact';
+    'history history skills'
+    'history history skills'
+    'history history contact';
   @media (max-width: 1000px) {
     grid-template:
       'intro intro'
@@ -217,11 +296,10 @@ h2 {
 #skills {
   grid-area: skills;
   .list();
-  
 }
 
 
-#history{
+#history {
   grid-area: history;
   .list();
 }
@@ -231,16 +309,17 @@ h2 {
   grid-area: contact;
 }
 
+
 footer {
-  position: fixed;
+
   bottom: 0;
   margin-left: -@margin;
   max-width: 100vw;
   width: 100vw;
-  height: @footer-height;
+  height:100px;
 
   .center();
-  .primaryColor();
+ 
 
   p {
     margin: 4px;
