@@ -1,1 +1,269 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+html,
+body {
+  height: 100%;
+  font-family: 'Andale Mono', monospace;
+  line-height: 1.5 rem;
+}
+body {
+  height: 100%;
+  margin: 30px;
+}
+h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  border-bottom: solid 1px red;
+  padding-bottom: 6px;
+  margin-bottom: 15px;
+}
+h2 {
+  font-size: 1.3rem;
+  border-bottom: solid 1px red;
+  padding-bottom: 6px;
+  margin-bottom: 15px;
+}
+.card {
+  background: whitesmoke;
+  border-radius: 2px;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.card:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+header nav .logo {
+  background-color: red;
+  width: 100px;
+  height: 64px;
+}
+header nav .links {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+header nav .links a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: black;
+}
+@media (max-width: 960px) {
+  header nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  header nav .logo {
+    margin-bottom: 30px;
+  }
+  header nav .links {
+    width: 100%;
+  }
+}
+.content {
+  margin-bottom: 130px;
+  display: grid;
+  grid-gap: 30px;
+  grid-template: 'intro intro intro' 'skills skills history' 'skills skills history' 'skills skills contact';
+}
+@media (max-width: 1000px) {
+  .content {
+    grid-template: 'intro intro' 'skills skills' 'history history' 'history history' 'contact contact';
+  }
+}
+#intro {
+  grid-area: intro;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#intro img {
+  max-height: 600px;
+}
+#intro .info {
+  margin: 30px;
+}
+@media (max-width: 560px) {
+  #intro .info {
+    margin: 0;
+  }
+}
+@media (max-width: 1000px) {
+  #intro {
+    flex-direction: column;
+  }
+  #intro img {
+    margin-bottom: 30px;
+  }
+}
+#skills {
+  grid-area: skills;
+}
+#skills ul {
+  padding-left: 22px;
+  line-height: 2rem;
+}
+#history {
+  grid-area: history;
+}
+#history ul {
+  padding-left: 22px;
+  line-height: 2rem;
+}
+#contact {
+  grid-area: contact;
+}
+footer {
+ 
+  position: center;
+  bottom: 0;
+  margin-left: -30px;
+  max-width: 100vw;
+  width: 100vw;
+  height: 100px;
+  background-color: lightgrey;
+  color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+@media (max-width: 550px) {
+  footer {
+    font-size: 0.8rem;
+  }
+}
